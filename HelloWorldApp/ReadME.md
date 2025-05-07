@@ -134,7 +134,74 @@ Some things to try next:
 * Run `gcloud cheat-sheet` to see a roster of go-to `gcloud` commands.
 
 C:\Program Files (x86)\Google\Cloud SDK>gcloud app browse
+
 Opening [https://exalted-amphora-450906-p9.el.r.appspot.com] in a new tab in your default browser.
 
 C:\Program Files (x86)\Google\Cloud SDK>
 ```
+
+
+
+DELETE GOOGLE CLOUD DEPLOYED PROJECTS : 
+---
+
+
+
+### ✅ Step-by-Step to Delete the App Deployment:
+
+#### 1. **Open VS Code Terminal (Ctrl + \`)**
+
+Make sure you're in the project directory and logged into Google Cloud.
+
+#### 2. **List Deployed Services**
+
+```bash
+gcloud app services list
+```
+
+This will show you all services deployed in App Engine (usually `default`).
+
+#### 3. **List Versions of a Service (e.g., default)**
+
+```bash
+gcloud app versions list --service=default
+```
+
+This shows all deployed versions of the service.
+
+#### 4. **Delete All Versions of the Service**
+
+You can delete specific versions or all non-serving ones:
+
+```bash
+gcloud app versions delete [VERSION_ID_1] [VERSION_ID_2]
+```
+
+To delete all versions (force delete without prompt):
+
+```bash
+gcloud app versions delete $(gcloud app versions list --format="value(version.id)") --quiet
+```
+
+#### 5. **(Optional) Disable App Engine Application**
+
+You can’t completely delete App Engine once it's enabled, but you can **disable billing and shut everything down** to avoid charges:
+
+* Go to **[https://console.cloud.google.com/appengine/settings](https://console.cloud.google.com/appengine/settings)**
+* Click **Disable Application** (if available).
+* Or disable billing from **Billing settings**.
+
+---
+
+### 🔁 Cleanup (Optional):
+
+* Delete other associated resources (e.g., Cloud Storage, Datastore, Firestore).
+* Remove App Engine app from your project (if needed, via Google Cloud Console).
+
+---
+
+### 📌 Reminder:
+
+App Engine itself can’t be deleted once created — only **versions and services** can be removed.
+
+Would you like help writing a cleanup script for multiple versions or services?
