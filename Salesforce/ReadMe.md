@@ -1,5 +1,9 @@
 LINK : https://www.youtube.com/watch?v=n4Nx7YD5_mY
 
+To easily log in later, save this URL:
+https://orgfarm-1fcee611a3-dev-ed.develop.my.salesforce.com
+
+
 ---
 
 ## ✅ **Step 1: Sign Up for Salesforce Developer Edition** *(Only Once)*
