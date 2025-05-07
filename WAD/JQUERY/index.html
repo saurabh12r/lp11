@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SPPU Mobile Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jQuery Mobile -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<!-- Home Page -->
+<div data-role="page" id="home">
+
+  <div data-role="header" data-theme="b">
+    <h1>SPPU</h1>
+  </div>
+
+  <div data-role="content">
+    <h2>Welcome to Savitribai Phule Pune University</h2>
+    <p>This is a mobile-friendly website using jQuery Mobile.</p>
+    
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#about" data-transition="slide">About Us</a></li>
+      <li><a href="#form" data-transition="pop">Contact Form</a></li>
+      <li><a href="#departments" data-transition="flip">Departments</a></li>
+    </ul>
+  </div>
+
+  <div data-role="footer" data-position="fixed" data-theme="b">
+    <h4>© 2025 SPPU</h4>
+  </div>
+
+</div>
+
+<!-- About Page -->
+<div data-role="page" id="about">
+
+  <div data-role="header" data-theme="b">
+    <a href="#home" data-icon="home" data-transition="slide">Home</a>
+    <h1>About SPPU</h1>
+  </div>
+
+  <div data-role="content">
+    <p>Savitribai Phule Pune University, formerly University of Pune, is one of the premier universities in India.</p>
+  </div>
+
+  <div data-role="footer" data-theme="b">
+    <h4>Explore. Learn. Grow.</h4>
+  </div>
+
+</div>
+
+<!-- Form Page -->
+<div data-role="page" id="form">
+
+  <div data-role="header" data-theme="b">
+    <a href="#home" data-icon="home">Home</a>
+    <h1>Contact Us</h1>
+  </div>
+
+  <div data-role="content">
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" placeholder="Enter your name">
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" placeholder="Enter your email">
+
+      <label for="message">Message:</label>
+      <textarea name="message" id="message"></textarea>
+
+      <button type="submit" data-icon="check">Submit</button>
+    </form>
+  </div>
+
+  <div data-role="footer" data-theme="b">
+    <h4>We’ll get back to you soon!</h4>
+  </div>
+
+</div>
+
+<!-- Departments Page with List Formatting -->
+<div data-role="page" id="departments">
+
+  <div data-role="header" data-theme="b">
+    <a href="#home" data-icon="back">Back</a>
+    <h1>Departments</h1>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/code.png">Computer Engineering</a></li>
+      <li><a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/electrical.png">Electrical Engineering</a></li>
+      <li><a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/engineering.png">Mechanical Engineering</a></li>
+    </ul>
+  </div>
+
+  <div data-role="footer" data-theme="b">
+    <h4>Department List</h4>
+  </div>
+
+</div>
+
+<script>
+  // Event example
+  $(document).on("pageinit", "#form", function () {
+    $("form").submit(function (e) {
+      e.preventDefault();
+      alert("Form submitted! Thank you.");
+    });
+  });
+</script>
+
+</body>
+</html>
